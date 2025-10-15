@@ -64,6 +64,7 @@ flutter:
    - assets/images/concert.png
    - assets/images/background.png
    - assets/images/bg.png
+   - assets/images/concertd.png
    - assets/icons/vol.svg
   #   - images/a_dot_ham.jpeg
 

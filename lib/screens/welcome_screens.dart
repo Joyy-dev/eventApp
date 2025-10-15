@@ -10,7 +10,17 @@ class WelcomeScreens extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsetsGeometry.only(top: 150, bottom: 50),
-          color: Color.fromARGB(255, 252, 252, 252),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.topRight,
+              colors: [
+                Colors.white,
+                Colors.white,
+                const Color.fromARGB(255, 207, 179, 255),
+              ]
+            )
+          ),
           child: Column(        
             children: [
               Container(
@@ -23,7 +33,8 @@ class WelcomeScreens extends StatelessWidget {
                     fit: BoxFit.cover,
                     alignment: Alignment.center
                 ),
-              )),
+              ),
+              child: Image.asset('assets/images/concertd.png'),),
               Text('Elevate Your Experiences',
               style: TextStyle(
                 fontSize: 28,
