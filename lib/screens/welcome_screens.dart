@@ -1,3 +1,4 @@
+import 'package:eventease/widget/welcome_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,7 +10,7 @@ class WelcomeScreens extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsetsGeometry.only(top: 150, bottom: 50),
+          padding: EdgeInsetsGeometry.only(top: 100, bottom: 30),
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.bottomCenter,
@@ -29,25 +30,59 @@ class WelcomeScreens extends StatelessWidget {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
-                      'assets/images/bg.png'),
+                      'assets/images/bg.png'
+                    ),
                     fit: BoxFit.cover,
                     alignment: Alignment.center
                 ),
               ),
-              child: Image.asset('assets/images/concertd.png'),),
+              child: Stack(
+                children: [
+                  Container(
+                    height: 500,
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: Image.asset(
+                          'assets/images/joint.png'
+                        ).image,
+                      )
+                    ),
+                    child: Transform.translate(
+                      offset: Offset(80, -140),
+                      child: Container(
+                        height: 65,
+                        width: 180,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(50),
+                            topRight: Radius.circular(50),
+                            bottomRight: Radius.circular(50),
+                          ),
+                          color: Colors.white
+                        ),
+                        child: WelcomeIcons()
+                      ),
+                    ),
+                  )
+                ],
+              )),
               Text('Elevate Your Experiences',
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
+                fontFamily: 'Calibri',
                 color: Color.fromARGB(255, 33, 33, 33)
               ),),
               SizedBox(height: 10,),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: Text('Lorem ipsum dolor sit amet consectetur. Enim pharetra id faucibus proin leo ultrices facilisis non. Rhoncus vel arcu et sed nisl vitae suspendisse accumsan.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16,
+                  fontFamily: 'Calibri',
                   color: Color.fromARGB(255, 117, 117, 117)
                 ),),
               ),
@@ -95,23 +130,6 @@ class WelcomeScreens extends StatelessWidget {
                   ],
                 ),
               )
-              // ElevatedButton.icon(
-              //   onPressed: () {},
-              //   style: ElevatedButton.styleFrom(
-              //     backgroundColor: Colors.black,
-              //     foregroundColor: Colors.white,
-              //     padding: EdgeInsets.symmetric(horizontal: 70, vertical: 20),
-              //     textStyle: TextStyle(
-              //       fontSize: 18,
-              //       fontWeight: FontWeight.bold
-              //     ),
-              //   ),
-              //   icon: Icon(
-              //     Icons.arrow_forward_rounded, 
-              //     size: 16,
-              //   ),
-              //   label: Text('Get Started Now'),
-              // ),             
             ],
           ),
         ),

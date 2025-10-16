@@ -66,6 +66,10 @@ flutter:
    - assets/images/bg.png
    - assets/images/concertd.png
    - assets/icons/vol.svg
+   - assets/icons/Frame.svg
+   - assets/icons/Frame (1).svg
+   - assets/icons/Frame (2).svg
+   - assets/images/joint.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -83,9 +87,12 @@ flutter:
     - family: Amaral
       fonts:
            - asset: assets/fonts/Amaral.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
+             style: italic
+    - family: Calibri
+      fonts:
+           - asset: assets/fonts/Calibri.ttf
+           - asset: assets/fonts/Calibri_Bold.ttf
+             weight: 700
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf

@@ -13,6 +13,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Event Ticket App",
       home: WelcomeScreens(),
+      theme: ThemeData(
+        fontFamily: 'Amaral',
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(color: Color.fromARGB(255, 33, 33, 33))
+        ) 
+      ),
     );
   }
 }
