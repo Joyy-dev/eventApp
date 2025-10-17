@@ -46,6 +46,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
   flutter_svg: ^2.2.1
+  provider: ^6.1.5+1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -65,10 +66,12 @@ flutter:
    - assets/images/background.png
    - assets/images/bg.png
    - assets/images/concertd.png
+   - assets/images/subtract.png
    - assets/icons/vol.svg
    - assets/icons/Frame.svg
    - assets/icons/Frame (1).svg
    - assets/icons/Frame (2).svg
+   - assets/icons/Frame (3).svg
    - assets/images/joint.png
   #   - images/a_dot_ham.jpeg
 

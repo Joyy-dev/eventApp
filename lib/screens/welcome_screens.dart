@@ -1,3 +1,4 @@
+import 'package:eventease/screens/events_screens.dart';
 import 'package:eventease/widget/welcome_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -92,42 +93,49 @@ class WelcomeScreens extends StatelessWidget {
                 width: 30,
               ),
               SizedBox(height: 25,),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 9),
-                margin: EdgeInsets.symmetric(horizontal: 58, vertical: 20),
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(50)
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {}, 
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        foregroundColor: Colors.white,
-                        textStyle: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed(EventsScreens.routeName);
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 9),
+                  margin: EdgeInsets.symmetric(horizontal: 68, vertical: 20),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(50)
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(EventsScreens.routeName);
+                        }, 
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          foregroundColor: Colors.white,
+                          textStyle: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                        child: Text('Get Started Now')
+                      ),
+                      SizedBox(width: 20,),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.deepPurple,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: Icon( 
+                          Icons.arrow_forward_rounded, 
+                          size: 25,
+                          color: Colors.white,
                         ),
                       ),
-                      child: Text('Get Started Now')
-                    ),
-                    SizedBox(width: 20,),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: Colors.deepPurple,
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: Icon( 
-                        Icons.arrow_forward_rounded, 
-                        size: 25,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               )
             ],
