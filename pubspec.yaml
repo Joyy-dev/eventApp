@@ -47,6 +47,8 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_svg: ^2.2.1
   provider: ^6.1.5+1
+  carousel_slider: ^5.1.1
+  intl: ^0.20.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -73,6 +75,13 @@ flutter:
    - assets/icons/Frame (2).svg
    - assets/icons/Frame (3).svg
    - assets/images/joint.png
+   - assets/images/theatre.png
+   - assets/images/charity.png
+   - assets/images/orchestra.png
+   - assets/images/music.png
+   - assets/images/jazz.png
+   - assets/images/football.png
+   - assets/images/fashion.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
