@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Events {
   final String id;
   final String eventtitle;
@@ -24,7 +26,8 @@ class Events {
   });
 }
 
-final List<Events> allEvents = [
+class allEvents with ChangeNotifier {
+  final List<Events> _allEvents = [
   Events(
     id: 'e1',
     eventtitle: 'Creativity Denver Brass Orchestra Concert',
@@ -122,3 +125,7 @@ final List<Events> allEvents = [
     eventcategory: 'Charity',
   ),
 ];
+List<Events> get events {
+  return [..._allEvents];
+}
+}

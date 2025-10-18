@@ -1,3 +1,4 @@
+import 'package:eventease/widget/category_navigation.dart';
 import 'package:eventease/widget/custom_botton.dart';
 import 'package:eventease/widget/event_search.dart';
 import 'package:eventease/widget/popular_events.dart';
@@ -94,9 +95,10 @@ class EventsScreens extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 330,
+                height: 290,
                 child: PopularEvents()
-              )
+              ),
+              CategoryNavigation()
             ],
           ),
         ),

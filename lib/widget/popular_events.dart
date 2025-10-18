@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:provider/provider.dart';
 
 import 'package:eventease/models/events.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +18,12 @@ class _PopularEventsState extends State<PopularEvents> {
   Timer? _timer;
 
   List<List<Events>> get eventGrid {
+    final event = Provider.of<allEvents>(context, listen: false);
+    final all =  event.events;
+
     List<List<Events>> grid = [];
-    for (int i = 0; i < allEvents.length; i += 2) {
-      grid.add(allEvents.skip(i).take(2).toList());
+    for (int i = 0; i < all.length; i += 2) {
+      grid.add(all.skip(i).take(2).toList());
     }
     return grid;
   }
@@ -51,7 +55,7 @@ class _PopularEventsState extends State<PopularEvents> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 330,
+      height: 290,
       child: PageView.builder(
         controller: _pageController,
         itemCount: eventGrid.length * 1000,
