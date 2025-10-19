@@ -10,7 +10,7 @@ class CustomBotton extends StatelessWidget {
       shape: CircularNotchedRectangle(),
       notchMargin: 20.0,
       color: Colors.white,
-      elevation: 8.0,
+      elevation: 20.0,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

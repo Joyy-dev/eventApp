@@ -1,5 +1,6 @@
 import 'package:eventease/models/events.dart';
 import 'package:eventease/screens/events_screens.dart';
+//import 'package:eventease/screens/single_events_screens.dart';
 import 'package:eventease/screens/welcome_screens.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
           ) 
         ),
         routes: {
-          EventsScreens.routeName: (context) => EventsScreens() 
+          EventsScreens.routeName: (context) => EventsScreens(),
+          //SingleEventsScreens.routeName: (context) => SingleEventsScreens(eventId: ,)
         },
       ),
     );

@@ -15,6 +15,7 @@ class EventsScreens extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
+        elevation: 20,
         backgroundColor: Color(0xFF775BE5),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50)

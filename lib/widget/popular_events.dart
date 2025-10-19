@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:eventease/screens/single_events_screens.dart';
 import 'package:provider/provider.dart';
 
 import 'package:eventease/models/events.dart';
@@ -136,12 +137,22 @@ class _PopularEventsState extends State<PopularEvents> {
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
                               children: [
-                                Text(
-                                  event.eventtitle,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context, 
+                                      MaterialPageRoute(
+                                        builder: (context) => SingleEventsScreens(eventId:event.id)
+                                      ), 
+                                    );
+                                  },
+                                  child: Text(
+                                    event.eventtitle,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold
+                                    ),
                                   ),
                                 ),
                                 Padding(
