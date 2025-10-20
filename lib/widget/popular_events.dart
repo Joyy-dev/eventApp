@@ -29,6 +29,7 @@ class _PopularEventsState extends State<PopularEvents> {
     return grid;
   }
 
+  @override
   void initState() {
     super.initState();
     _pageController = PageController(viewportFraction: 1.0);

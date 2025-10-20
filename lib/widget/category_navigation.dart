@@ -27,6 +27,7 @@ class CategoryNavigation extends StatelessWidget {
                 child: Icon(
                   Icons.qr_code,
                   color: Colors.white,
+                  size: 16,
                 )
               ),
               Text(
@@ -79,7 +80,7 @@ class CategoryNavigation extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30),
                   color: Colors.purple
                 ),
-                child: Icon(Icons.sports_basketball_outlined, color: Colors.white,),
+                child: Icon(Icons.sports_basketball_outlined, color: Colors.white, size: 15,),
               ),
               Text(
                 'Sports',

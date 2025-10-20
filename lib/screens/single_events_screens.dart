@@ -1,5 +1,5 @@
 import 'package:eventease/models/events.dart';
-import 'package:eventease/widget/event_map.dart';
+import 'package:eventease/widget/event_scroll_section.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -75,8 +75,9 @@ class SingleEventsScreens extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(selectedEvent.eventimage),
-              fit: BoxFit.cover
-            )
+              fit: BoxFit.cover,
+              opacity: 10
+            ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -155,182 +156,7 @@ class SingleEventsScreens extends StatelessWidget {
             ],
           ),
         ),
-        DraggableScrollableSheet(
-          initialChildSize: 0.5,
-          minChildSize: 1 / 2,
-          maxChildSize: 0.6,
-          builder: (context, scrollController) {
-            return Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 15),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30)
-              )
-            ),
-            child: SafeArea(
-              child: SingleChildScrollView(
-                controller: scrollController,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Event Schedule',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.linear_scale_outlined, color: Color(0xFFA183DB),),
-                            SizedBox(width: 5,),
-                            Text(
-                              'Day 1',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 17
-                              ),
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              DateFormat('E, MMM d y').format(selectedEvent.eventdate),
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 17
-                              ),
-                            ),
-                            SizedBox(width: 7,),
-                            Icon(Icons.circle, size: 5,),
-                            SizedBox(width: 7,),
-                            Text(
-                              DateFormat('h:mm a').format(selectedEvent.eventTime),
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 17
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.linear_scale_outlined, color: Color(0xFF74CA8D),),
-                            SizedBox(width: 5,),
-                            Text(
-                              'Day 2',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 17
-                              ),
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              DateFormat('E, MMM d y').format(selectedEvent.eventdate),
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 17
-                              ),
-                            ),
-                            SizedBox(width: 7,),
-                            Icon(Icons.circle, size: 5,),
-                            SizedBox(width: 7,),
-                            Text(
-                              DateFormat('h:mm a').format(selectedEvent.eventTime),
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 17
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                    SizedBox(height: 10,),
-                    Text(
-                      'About',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22
-                      ),
-                    ),
-                    SizedBox(height: 10,),
-                    Text(
-                      selectedEvent.eventdescription,
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 17
-                      ),
-                    ),
-                    Divider(),
-                    SizedBox(height: 10,),
-                    Text(
-                      'Location',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22
-                      ),
-                    ),
-                    SizedBox(height: 10,),
-                    Text(
-                      'Exbract Venue Auditorium',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          selectedEvent.eventlocation,
-                          style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.grey
-                          ),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            foregroundColor: Colors.black,
-                            side: BorderSide(
-                              width: 2,
-                              color: Colors.black
-                            ),
-                            textStyle: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold
-                            )
-                          ),
-                          child: Text('Get Direction')
-                        )
-                      ],
-                    ),
-                    SizedBox(height: 10,),
-                    EventMap()
-                  ],
-                ),
-              ),
-            ),
-         );
-        },
-        ),
+        EventScrollSection()
         ],
       ),
     );

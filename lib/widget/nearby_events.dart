@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:eventease/screens/single_events_screens.dart';
 import 'package:intl/intl.dart';
 
 import 'package:eventease/models/events.dart';
@@ -99,12 +100,17 @@ class _NearbyEventsState extends State<NearbyEvents> {
                     ),
                     Column(
                       children: [
-                        Text(
-                          event.eventtitle,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => SingleEventsScreens(eventId: event.id)));
+                          },
+                          child: Text(
+                            event.eventtitle,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16
+                            ),
                           ),
                         ),
                         Text(
